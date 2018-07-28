@@ -1,0 +1,15 @@
+:root{
+    --app-route-link-style: none;
+    --app-route-link-display: inline-block;
+    --app-route-link-active-color: #16DF82;
+}
+
+li {
+    list-style: var(--app-route-link-style);
+    display: var(--app-route-link-display);
+    margin-left: 4%;
+}
+
+a :active {
+    color: var(--app-route-link-active-color);
+}

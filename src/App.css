@@ -1,0 +1,135 @@
+:root {
+  /* Gradients */
+  --app-grad-blug: linear-gradient(45deg, #455A64, #232D32);
+  --app-grad-grey: linear-gradient(45deg, #FFFFFF, #ECEFF1);
+  --app-grad-blugrey-light: linear-gradient(45deg, #FFFFFF, #f4f4f4);
+
+  /* Gradient Assignments */
+  --app-grad-container: var(--app-grad-blugrey-light);
+
+  /* Colors */
+  --app-color-primary: #041620;
+  --app-color-secondary: #16DF82;
+  --app-color-text-brown-900: #3E2723;
+  --app-color-text-grey-900: #212121;
+  --app-color-text-grey-800: #424242;
+  --app-color-text-grey-700: #616161;
+  --app-color-text-secondary: #16DF82;
+
+  --app-color-shadow-dark: #16DF82;
+  --app-color-shadow-light: #16DF82;
+
+  /* Color Assignments */
+  --app-color-text-heading: var(--app-color-text-grey-900);
+  --app-color-text-subheading: var(--app-color-text-grey-800);
+  --app-color-text-description: var(--app-color-text-brown-900);
+  --app-color-text-paragraph: var(--app-color-text-grey-800);
+  --app-color-text-paragraph-light: var(--app-color-text-grey-700);
+
+  /* Dimensions */
+  --app-layout-text-padding: 16px;
+  --app-back-top-height:40vh;
+  --app-back-bottom-height:50vh;
+
+  /* Shadows and elevation */
+  --app-fore-container-elevation: 0;
+  --app-back-container-elevation: -1;
+
+  --app-fore-container-corner-radius: 4rpx;
+  --app-fore-container-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.1); /* box-shadow: offset-x | offset-y | blur-radius | spread-radius | color */
+  --app-back-container-shadow: 1px 1px 4px 1px rgb(40, 40, 40, 0.1);
+
+
+  /* Form elements */
+  --app-form-color-valid: #FF0;
+  --app-form-color-focused: #FF0;
+  --app-form-color-default: #FF0;
+  --app-form-color-placeholder: #FF0;
+  --app-form-color-tooltip: #FF0;
+  --app-form-color-invalid: #FF0;
+
+  --app-form-field-container-padding: 4em;
+  --app-form-field-container-elevation: 1;
+  --app-form-field-container-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-back-top {
+  background: var(--app-grad-blug);
+  height: var(--app-back-top-height);
+  position: relative;
+  color: white;
+  /* z-index: var(--app-back-container-elevation); */
+}
+
+.App-back-bottom{
+  background: var(--app-grad-blugrey-light);
+  height: var(--app-back-bottom-height);
+  position: relative;
+  color: var(--app-color-text-brown-900);
+  z-index: var(--app-back-container-elevation);
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-content {
+  position: absolute;
+  top: 20%;
+  width: 60%;
+  min-width: 60%;
+  max-width: 60%;
+  height: 70vh;
+  background: var(--app-grad-container);
+  color: var(--app-color-text-paragraph);
+  margin-left: 20%;
+  margin-right: 20%;
+  overflow-y: scroll;
+  padding: var(--app-layout-text-padding);
+  z-index: var(--app-fore-container-elevation);
+  box-shadow: var(--app-fore-container-shadow);
+  border-radius: var(--app-fore-container-corner-radius);
+}
+
+:link{color: var(--app-color-secondary);}
+a :visited {color: var(--app-color-primary);}
+
+.App-content li {
+  list-style: none;
+  text-align: left;
+  font-size: 0.8rem;
+}
+/* @keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(15deg); }
+} */
+
+/* .Content {
+  background: linear-gradient(45deg, #455A64, #232D32);
+} */
+
+/* .Content > .a:visited{
+  color: #CCC;
+  text-decoration-color: #CCC;
+}
+.Content > .a[selected]{
+  color: #CCC;
+  text-decoration-color: #CCC;
+} */

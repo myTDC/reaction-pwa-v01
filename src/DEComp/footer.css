@@ -1,0 +1,78 @@
+:root{
+    --app-grad-blug: linear-gradient(180deg, #455A64, #232D32);
+    --app-color-primary: #041620;
+
+    --app-color-text-brown-50: #EFEBE9;
+    --app-color-text-brown-100: #D7CCC8;
+
+    --app-color-text-grey-50: #FAFAFA;
+    --app-color-text-grey-100: #F5F5f5;
+    --app-color-text-grey-200: #EEEEEE;
+
+    --app-color-text-grey-900: #212121;
+    --app-color-text-grey-800: #424242;
+    --app-color-text-grey-700: #616161;
+    --app-color-text-secondary-dark: #00cb54;
+    --app-color-text-secondary-light:#69f0ae;
+
+      /* Color Assignments */
+    --app-color-text-heading: var(--app-color-text-secondary-dark);
+    --app-color-text-links: var(--app-color-text-secondary-light);
+    --app-color-text-links-visited: var(--app-color-text-secondary-dark);
+    --app-color-text-copyright: var(--app-color-text-grey-100);
+
+
+    /* Dimensions */
+    --app-layout-text-padding: 16px;
+    --app-footer-container-padding: 4em;
+    /* --app-footer-container-elevation: 1; */
+    --app-footer-field-container-shadow: 2px -2px 4px 1px rgba(0, 0, 0, 0.1);
+
+    --app-footer-height:8vh;
+    --app-footer-width:inherit;
+    --app-footer-padding: 16px;
+
+    /* Font Sizes */
+    --app-text-size-normal: 0.7em;
+    --app-text-size-paragraph: 0.6em;
+    --app-text-size-heading: 0.9em;
+    --app-text-size-links: 0.6em;
+    --app-text-style-links: uppercase;
+
+}
+
+.footer{
+    width: var(--app-footer-width);
+    min-width: var(--app-footer-width);
+    max-width: var(--app-footer-width);
+    height: var(--app-footer-height);
+    max-height: var(--app-footer-height);
+    min-height: var(--app-footer-height);
+    background: var(--app-grad-blug);
+    color: var(--app-color-text-copyright);
+    font-size: var(--app-text-size-normal);
+    padding: 2rem;
+    padding-block-start: var(--app-footer-container-padding)*2;
+    padding-block-end: var(--app-footer-container-padding)*2;
+    box-shadow: var(--app-footer-field-container-shadow);
+}
+
+.footer h4{
+    color: var(--app-color-text-heading);
+    font-size: var(--app-text-size-heading);
+}
+
+.footer:link{
+    color: var(--app-color-text-links);
+    font-size: var(--app-text-size-links);
+    font-style: var(--app-text-style-links);
+}
+a:visited {
+    color: var(--app-color-text-links-visited);
+}
+
+.footer li{
+    list-style: none;
+    text-align: left;
+    font-size: 0.8rem;
+}
