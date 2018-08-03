@@ -1,7 +1,14 @@
 import { authRef, provider } from '../Config/fb';
 
-export const FETCH_USER = 'fetch_user';
-export const SIGN_IN = 'sign_in';
+export const SIGN_IN = 'SIGN_IN';
+export const SIGN_OUT = 'SIGN_OUT';
+export const FETCH_USER = 'FETCH_USER';
+
+export const signInSample = (/*Takes Payload of the associated Action*/) => {
+    return { /*Retunrs an action*/
+        type: SIGN_IN
+    };
+};
 
 export const fetchUser = () => dispatch => {
     authRef.onAuthStateChanged(user => {
@@ -16,13 +23,17 @@ export const fetchUser = () => dispatch => {
 };
     
 export const signIn = () => dispatch => {
+    // dispatch({ type: SIGN_IN, fbaref: authRef});
+    console.log('SignIn Initiated');
     authRef
     .signInWithPopup(provider)
     .then(result => {
-        console.log('SignIn Successful!');
+        
+        console.log('SignIn Successful!', result);
+        ()=>fetchUser();
     })
     .catch(error => {
-        console.log(error);
+        console.log('Error when logging In', error);
     });
 };
     

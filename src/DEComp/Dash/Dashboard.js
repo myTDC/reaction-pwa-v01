@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+//Styling
 import './Dashboard.css';
 
+//Libs
 import Button from '@material-ui/core/Button';
+import { Route, NavLink, Switch } from 'react-router-dom';
+import { connect } from "react-redux";
+//Custom Libs import {  } from '';
 import { fetchUser } from '../Actions/Auth_Act';
 import { Articles } from '../Articles/Articles';
-import { Route, NavLink, Switch } from 'react-router-dom';
+import { signIn } from '../Actions/UserRegistrar_Actions';
 
 class Dashboard extends Component{
-    state = {
-        isAuth: false
-    }
-
     handleSubmit(event) {
         console.log('App| Handling form Submission');
     }
@@ -24,19 +25,20 @@ class Dashboard extends Component{
     
 
     render(){
-        let checkAuth  = (isUserAuthenticated) => {
-            fetchUser();
-            //dispatchEvent(fetchUser());
+        // const checkAuth  = (isUserAuthenticated) => {
+        //     console.log('Checking Auth State');
+        //     fetchUser();
+        //     //dispatchEvent(fetchUser());
         
-            // if(isUserAuthenticated){
+        //     // if(isUserAuthenticated){
         
-            //   const authState = {...this.state.isAuth};
-            //   authState.isAuth = true;
+        //     //   const authState = {...this.state.isAuth};
+        //     //   authState.isAuth = true;
               
-            //   return true;
-            //     //<ArtList/>
-            // }
-        }
+        //     //   return true;
+        //     //     //<ArtList/>
+        //     // }
+        // }
         return(
             <div className="Dash">
             <header>
@@ -58,16 +60,101 @@ class Dashboard extends Component{
                 <Route path='/articles' exact Component={<h1>articles</h1>} />
                 <Route path='/articles/:id' exact Component={<h2>articles/article</h2>} />
             </Switch>
-            <Button variant="contained" color="primary" onClick={checkAuth(this.isAuth)}>
-                Hello Dashboard
+            <Button variant="contained" color="primary" onClick={this.props.onSignIn()}>
+                Hello Dashboard | Login
+            </Button>
+            <Button variant="contained" color="primary" onClick={this.props.fetchUser()}>
+                Hello Dashboard | Login
             </Button>
             {/*<h4>Title:{this.displayfile(0).title}</h4>
             <h4>IamgeUrl:{this.displayfile(0).image}</h4>
             <h4>Url:{this.displayfile(0).url}</h4>
             <h4>Length:{this.displayfile(0).length}</h4>*/}
+
+            <ul>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+                <li>Art 1</li>
+            </ul>
             </div>
         )
     }
 }
 
-export default Dashboard;
+const mapStateToProps = state => {
+    return {
+        isAuth: state.auth.isAuth
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return{
+        onSignIn: () => dispatch(signIn),
+        onFetchUser: () => dispatch(fetchUser)
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

@@ -2,12 +2,22 @@
     --app-route-link-style: none;
     --app-route-link-display: inline-block;
     --app-route-link-active-color: #16DF82;
+
+
+    --app-nav-container-background: #FFF;
+    --app-nav-container-margin: 1%;
+    --app-nav-container-padding: 2%;
+    --app-nav-container-shadow: 0.75px -0.75px 1px rgb(40, 40, 40, 0.1); /* box-shadow: offset-x | offset-y | blur-radius | spread-radius | color */
 }
 
-li {
+.Nav li {
     list-style: var(--app-route-link-style);
     display: var(--app-route-link-display);
-    margin-left: 4%;
+    margin: var(--app-nav-container-margin);
+    padding: var(--app-nav-container-padding);
+    background-color: var(--app-nav-container-background);
+    box-shadow: var(--app-nav-container-shadow);
+    rotate: 90deg;
 }
 
 a :active {

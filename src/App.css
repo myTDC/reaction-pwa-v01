@@ -16,8 +16,8 @@
   --app-color-text-grey-700: #616161;
   --app-color-text-secondary: #16DF82;
 
-  --app-color-shadow-dark: #16DF82;
-  --app-color-shadow-light: #16DF82;
+  --app-color-shadow-dark: var(--app-color-secondary);
+  --app-color-shadow-light: var(--app-color-primary);
 
   /* Color Assignments */
   --app-color-text-heading: var(--app-color-text-grey-900);
@@ -28,8 +28,11 @@
 
   /* Dimensions */
   --app-layout-text-padding: 16px;
+  --app-fore-content-height:66vh;
+  --app-fore-content-position-top:30%;
+  --app-fore-content-width:60%;
   --app-back-top-height:40vh;
-  --app-back-bottom-height:50vh;
+  --app-back-bottom-height:60vh;
 
   /* Shadows and elevation */
   --app-fore-container-elevation: 0;
@@ -64,17 +67,24 @@
 }
 
 .App-back-top {
+  position: relative;
   background: var(--app-grad-blug);
   height: var(--app-back-top-height);
-  position: relative;
+  
   color: white;
+  /* z-index: var(--app-back-container-elevation); */
+}
+.App-back-top AppBar{
+  
+  background-color: var(--app-color-primary);
   /* z-index: var(--app-back-container-elevation); */
 }
 
 .App-back-bottom{
+  position: relative;
   background: var(--app-grad-blugrey-light);
   height: var(--app-back-bottom-height);
-  position: relative;
+  
   color: var(--app-color-text-brown-900);
   z-index: var(--app-back-container-elevation);
 
@@ -90,13 +100,13 @@
   font-size: large;
 }
 
-.App-content {
+.App-fore-content {
   position: absolute;
-  top: 20%;
-  width: 60%;
-  min-width: 60%;
-  max-width: 60%;
-  height: 70vh;
+  top: var(--app-fore-content-position-top);
+  width: var(--app-fore-content-width);
+  min-width: var(--app-fore-content-width);
+  max-width: var(--app-fore-content-width);
+  height: var(--app-fore-content-height);
   background: var(--app-grad-container);
   color: var(--app-color-text-paragraph);
   margin-left: 20%;
@@ -108,10 +118,12 @@
   border-radius: var(--app-fore-container-corner-radius);
 }
 
+::-webkit-scrollbar { visibility: hidden; }
+
 :link{color: var(--app-color-secondary);}
 a :visited {color: var(--app-color-primary);}
 
-.App-content li {
+.App-fore-content li {
   list-style: none;
   text-align: left;
   font-size: 0.8rem;

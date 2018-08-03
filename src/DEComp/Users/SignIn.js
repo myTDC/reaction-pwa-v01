@@ -1,8 +1,12 @@
 import React from 'react';
 import './SignIn.css';
 
-export const changeAuthState = (props) => {
+const SignIn = (props) => {
+    console.log(props);
+    
     return(
-        <div> </div>
+        <div> <p>HEEEELLLLLOOOOOOO I'm From {props.title}</p> </div>
     );
 };
+
+export default SignIn;
